@@ -14,7 +14,7 @@ import itertools
 # Chris,Ben,% Chris wins,% Ben wins,% draws
 
 
-# We have provided you the input files for Alex, Chris, and Ben. You should download them from the the python bootcamp git account using the command line wget command.
+# We have provided you the input files for Alex, Chris, and Ben.
 # The files are stored in the github repository: python_bootcamp_2020/HW_files/HW_week_2/
 
 # You should read in each file using the argparse module as shown in class. While many methods of reading in options exist, for consistency's sake and ease of grading, 
