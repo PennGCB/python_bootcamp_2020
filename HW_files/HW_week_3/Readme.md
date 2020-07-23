@@ -29,4 +29,5 @@ $ conda activate hw3_env
 $ jupyter notebook
 ```
 5. Copy and paste the url link that appears in the terminal into your browser
+6. Select `hw3_env` as your kernel when prompted. If not prompted, then the kernel can be selected from `Kernel`>`Change kernel` dropdown menu
 6. Start editing the `.ipynb` files

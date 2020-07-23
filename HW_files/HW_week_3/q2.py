@@ -52,7 +52,7 @@ def filter_patients(df):
 
 def get_most_popular_drugs(nonzero_df):
     """
-    Get the top 5 drugs that are used by patients.
+    Get the top 3 drugs that are used by patients.
     
     Input
     -----
