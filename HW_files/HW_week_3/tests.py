@@ -24,16 +24,25 @@ def test_q2_shape(df):
 
 
 def test_q2_statement(statement):
-    try:
-        assert (
-            statement
-            == "Drug Ebselen is 1.05133928571 times more effective then the second most commonly effective drug, Remdesivir"
-        )
-    except AssertionError:
-        print("Your string does not appear to be correct.")
-        return
+    error = False
 
-    print("You successfully used pandas!")
+    drug1 = statement.split(" ")[1]
+    ratio = statement.split(" ")[3]
+    drug2 = statement.split(" ")[-1]
+
+    if drug1 != "Ebselen":
+        print("Your top scoring drug does not appear to be correct.")
+        error = True
+
+    if drug2 != "Remdesivir":
+        print("Your second scoring drug does not appear to be correct.")
+        error = True
+
+    if not np.isclose(float(ratio), 1.05133928571, atol=0.001):
+        print("Your ratio does not appear to be correct.")
+        error = True
+    if not error:
+        print("You successfully used pandas!")
 
 
 def a_column_or_index_contains(df, contains):
