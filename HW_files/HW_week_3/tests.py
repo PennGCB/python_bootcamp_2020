@@ -23,17 +23,13 @@ def test_q2_shape(df):
     print("You successfully filtered the dataset")
 
 
-def test_q2_statement(statement):
-    try:
-        assert (
-            statement
-            == "Drug Ebselen is 1.05133928571 times more effective then the second most commonly effective drug, Remdesivir"
-        )
-    except AssertionError:
-        print("Your string does not appear to be correct.")
-        return
-
-    print("You successfully used pandas!")
+def test_q2_values(better_drug, lesser_drug, ratio):
+    errors = []
+    if better_drug != "Ebselen" or lesser_drug != "Remdesivir":
+        errors.append("Ranking of drugs appears incorrect.")
+    if abs(ratio - 1.0513392857142858) > 0.001:
+        errors.append("Effect ratio appears incorrect.")
+    print("\n".join(errors) if errors else "You got the correct effect ratio")
 
 
 def a_column_or_index_contains(df, contains):

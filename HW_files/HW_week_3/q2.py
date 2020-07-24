@@ -7,7 +7,7 @@ you may be overthinking it
 import os
 import pandas as pd
 
-from tests import test_q2_shape, test_popular_drugs, test_q2_statement
+from tests import test_q2_shape, test_popular_drugs, test_q2_values
 
 
 def create_dataframe(path_to_datafile):
@@ -105,16 +105,16 @@ def get_ratio(effective_df):
 
     Returns
     -------
-    print statement about the ratio of effectiveness
+    str, str, float
+        1st drug name, 2nd drug name, and ratio of effect of 1st to 2nd
+
     """
     most_effective_drug = # Your code here
     second_effective_drug = # Your code here
     ratio_effect = # Your code here
 
-    return "Drug {} is {} times more effective then the second most commonly effective drug, {}".format(
-        str(most_effective_drug), ratio_effect, str(second_effective_drug)
-    )
-
+    return most_effective_drug, second_effective_drug, ratio_effect
+    
 
 def main():
     # Find the path to the data
@@ -136,8 +136,8 @@ def main():
     effective_df = get_most_effective_drugs(nonzero_df)
 
     # 5. Determine the how much more effective the most popular effective drug is
-    statement = get_ratio(effective_df)
-    test_q2_statement(statement)
+    better_drug, lesser_drug, ratio = get_ratio(effective_df)
+    test_q2_values(better_drug, lesser_drug, ratio)
 
 
 if __name__ == "__main__":
