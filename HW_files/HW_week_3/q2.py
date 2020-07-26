@@ -62,7 +62,8 @@ def get_most_popular_drugs(nonzero_df):
     Returns
     -------
     popular_df: pandas.DataFrame
-        The dataframe containing the top 3 most popular effective drugs
+        The dataframe containing the top 3 most popular effective drugs.
+        This dataframe should be dimenion (3 x #).
     
     """
     # Processing code here
@@ -72,7 +73,7 @@ def get_most_popular_drugs(nonzero_df):
 
 def get_most_effective_drugs(nonzero_df):
     """
-    Get the top 2 most effective and commonly used drugs
+    Get the top 2 most effective among the 3 most commonly used drugs
     
     Input
     -----
