@@ -47,7 +47,7 @@ def test_q2_statement(statement):
 
 def a_column_or_index_contains(df, contains):
     for series in [df[col] for col in df.columns] + [df.index]:
-        if np.all([contained in series for contained in contains]):
+        if np.all([contained in series.to_list() for contained in contains]):
             return True
     return False
 
