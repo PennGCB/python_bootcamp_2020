@@ -1,7 +1,7 @@
 To set up the conda environment needed for HW5, please run the following:
 	conda env create -f hw5_env.yml
 
-To activate the environment, run:
+To activate the environment, run:\n
 	conda activate hw5
 
 If creating the environment above fails, please try the following:
