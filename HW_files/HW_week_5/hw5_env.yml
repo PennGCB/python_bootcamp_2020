@@ -1,0 +1,50 @@
+name: hw5
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - backports=1.0
+  - backports.functools_lru_cache=1.6.1
+  - backports_abc=0.5
+  - blas=1.0
+  - ca-certificates=2020.6.24
+  - certifi=2019.11.28
+  - cycler=0.10.0
+  - freetype=2.10.2
+  - functools32=3.2.3.2
+  - futures=3.3.0
+  - intel-openmp=2019.4
+  - kiwisolver=1.1.0
+  - libcxx=10.0.0
+  - libedit=3.1.20191231
+  - libffi=3.3
+  - libgfortran=3.0.1
+  - libpng=1.6.37
+  - matplotlib=2.2.3
+  - mkl=2019.4
+  - mkl-service=2.3.0
+  - mkl_fft=1.0.15
+  - mkl_random=1.1.0
+  - ncurses=6.2
+  - numpy=1.16.6
+  - numpy-base=1.16.6
+  - pandas=0.24.2
+  - pip=19.3.1
+  - pyparsing=2.4.7
+  - python=2.7.18
+  - python-dateutil=2.8.1
+  - pytz=2020.1
+  - readline=8.0
+  - scikit-learn=0.20.3
+  - scipy=1.2.1
+  - setuptools=44.0.0
+  - singledispatch=3.4.0.3
+  - six=1.15.0
+  - sqlite=3.32.3
+  - subprocess32=3.5.4
+  - tk=8.6.10
+  - tornado=5.1.1
+  - wheel=0.33.6
+  - zlib=1.2.11
+prefix: /anaconda2/envs/hw5
+
