@@ -1,4 +1,4 @@
-name: hw5
+name: hw6
 channels:
   - defaults
   - conda-forge
@@ -46,5 +46,5 @@ dependencies:
   - tornado=5.1.1
   - wheel=0.33.6
   - zlib=1.2.11
-prefix: /anaconda2/envs/hw5
+prefix: /anaconda2/envs/hw6
 
