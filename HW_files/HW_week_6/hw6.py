@@ -33,20 +33,41 @@ def fit_kmeans(X, k):
 
 
 
+
 """
-- Description: Given a vector of variance explained per principal component
+- Description: Given a vector of variance explained per principal component,
+	computes the cumulative variance explained by each principal component
+		Example:
+			Given an input numpy vector with the following entires: [0.4, 0.3, 0.2, 0.1],
+			the function should return: [0.4, 0.7, 0.9, 1.0] 
+- Input:
+	fraction_variance_explained: Numpy vector, where entries are the fraction
+	of  variance explained by each principle component
+- Output:
+	Numpy vector of the same length as fraction_variance_explained, where
+	entries are the cumulative variance explained
+
+"""
+def compute_cumulative_variance_explained(fraction_variance_explained):
+	pass
+
+
+
+"""
+- Description: Given a vector of the cumulative variance explained per principal component
 	and a threshold fraction of variation that we want our principle components to
 	explain, return the number of top principle components to keep
 - Input:
-	variance_explained: Numpy vector, where entries are the variance explained
-	by each principle component
+	cumulative_variance_explained: Numpy vector, where entries are the cumulative fraction
+	of  variance explained by each principle component
 	threshold_fraction: Float in range [0,1]; Fraction of variance we want the 
 	top principle componetns to explain
-- Output: An integer, corresponding to the number of principle components
+- Output:
+	An integer, corresponding to the number of principle components
 	that explain at least threshold_fraction of the total data variance
 
 """
-def get_num_top_pcs_required(variance_explained, threshold_fraction):
+def get_num_top_pcs_required(cumulative_variance_explained, threshold_fraction):
 	pass
 
 
@@ -103,8 +124,12 @@ def main():
 	# ** FillMe **
 
 
+	# --- COMPUTE THE CUMULATIVE VARIANCE EXPLAINED BY THE TOP PRINCIPLE COMPONENTS ----
+	cumulative_variance_explained = compute_cumulative_variance_explained(pca.explained_variance_ratio_)
+
+
 	# --- FIGURE OUT THE NUMBER OF PRINCIPLE COMPONENTS NEEDED TO SUMMARIZE 80% OF THE DATA VARIANCE ---
-	num_top_pcs_required = get_num_top_pcs_required(pca.explained_variance_, pca_variance_explained_threshold)
+	num_top_pcs_required = get_num_top_pcs_required(cumulative_variance_explained, pca_variance_explained_threshold)
 
 
 	# --- TRANSFORM THE DATA INTO PRINCIPLE COMPONENT SPACE AND KEEP ONLY THE TOP PC'S SUMMARIZING 80% OF THE DATA VARIANCE ---
@@ -135,7 +160,7 @@ def main():
 	# --- VISUALIZE VARIANCE EXPLAINED BY TOP PC's ---
 
 	plt.clf()
-	plt.scatter(np.arange(0,cumulative_var_explained.size) + 1,cumulative_var_explained,s=4)
+	plt.scatter(np.arange(0,cumulative_variance_explained.size) + 1,cumulative_variance_explained,s=4)
 	plt.xlabel("Number of top principle components")
 	plt.ylabel("Cumulative variance explained")
 	plt.axhline(y = 0.8, c = 'r')
